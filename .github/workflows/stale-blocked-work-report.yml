@@ -1,0 +1,31 @@
+name: Stale Blocked Work Report
+
+on:
+  schedule:
+    - cron: "0 7 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  stale-blocked-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Query blocked issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const query = 'org:Sireto label:blocked is:issue is:open';
+            const result = await github.rest.search.issuesAndPullRequests({
+              q: query,
+              per_page: 100
+            });
+
+            core.summary.addHeading('Blocked issues needing attention');
+            if (result.data.items.length === 0) {
+              core.summary.addRaw('No blocked issues found.\n');
+            }
+
+            for (const item of result.data.items) {
+              core.summary.addRaw(`- ${item.title} (${item.html_url})\n`);
+            }
+
+            await core.summary.write();

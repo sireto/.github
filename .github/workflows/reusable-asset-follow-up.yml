@@ -1,0 +1,44 @@
+name: Reusable Asset Follow-up
+
+on:
+  issues:
+    types: [closed]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  suggest-follow-up:
+    if: contains(join(github.event.issue.labels.*.name, ','), 'type:feature')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on closed feature issues with reusable potential
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = (context.payload.issue.labels || []).map(l => l.name);
+            const hasReusableSignal = labels.includes('type:reusable-asset') ||
+              /Reusable potential:\s*(Medium|High)/i.test(context.payload.issue.body || '');
+
+            if (!hasReusableSignal) {
+              core.info('No reusable asset signal found, skipping follow-up comment.');
+              return;
+            }
+
+            const body = [
+              'Reusable asset follow-up check:',
+              '',
+              '- [ ] Confirm whether this implementation should be extracted into a shared Sireto asset',
+              '- [ ] If yes, create a new `Reusable Asset` issue linked back to this work',
+              '- [ ] Record expected consumers and initial owner',
+              '',
+              `Origin issue: #${context.payload.issue.number}`
+            ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              body
+            });

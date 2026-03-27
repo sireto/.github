@@ -1,0 +1,7 @@
+* @sireto/engineering
+
+/docs/ @sireto/engineering
+/.github/ @sireto/platform
+/infrastructure/ @sireto/devops
+/security/ @sireto/security
+/platform/ @sireto/platform

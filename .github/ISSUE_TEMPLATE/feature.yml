@@ -1,0 +1,88 @@
+name: Feature
+description: Track feature, delivery, or product work
+title: "[Feature]: "
+labels: ["type:feature"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the work.
+    validations:
+      required: true
+
+  - type: textarea
+    id: business_context
+    attributes:
+      label: Business context
+      description: Why this work matters.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_outcome
+    attributes:
+      label: Expected outcome
+      description: What should be true when this is complete.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: List objective completion criteria.
+      placeholder: |
+        - [ ] Criterion 1
+        - [ ] Criterion 2
+    validations:
+      required: true
+
+  - type: input
+    id: component
+    attributes:
+      label: Repo or component
+      placeholder: e.g. cloudfirewall-api, shared-auth, sireto-storage
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stream
+    attributes:
+      label: Business stream
+      options:
+        - Client Delivery
+        - Internal Product
+        - Platform
+        - R&D
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reuse_potential
+    attributes:
+      label: Reusable potential
+      options:
+        - None
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: External dependencies, blockers, or prerequisite work.
+
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of done
+      value: |
+        - [ ] Code implemented
+        - [ ] Tests added or updated
+        - [ ] Documentation updated
+        - [ ] Pull request linked
+        - [ ] Reuse decision recorded

@@ -1,0 +1,74 @@
+name: Reusable Asset Proposal
+description: Propose a reusable internal module, template, or platform asset
+title: "[Reusable Asset]: "
+labels: ["type:reusable-asset"]
+body:
+  - type: input
+    id: originating_project
+    attributes:
+      label: Originating project
+      placeholder: e.g. CloudFirewall MVP
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem_solved
+    attributes:
+      label: Problem solved
+    validations:
+      required: true
+
+  - type: textarea
+    id: why_reusable
+    attributes:
+      label: Why reusable
+      description: Explain why this should become a shared asset.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: asset_type
+    attributes:
+      label: Proposed asset type
+      options:
+        - Library
+        - Template
+        - Service
+        - Module
+        - Workflow
+        - Infra
+        - Docs
+        - Pattern
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected_consumers
+    attributes:
+      label: Expected consumers
+      description: Which teams, products, or future projects would use this?
+    validations:
+      required: true
+
+  - type: textarea
+    id: adoption_plan
+    attributes:
+      label: Adoption plan
+      description: How would this be introduced and reused?
+    validations:
+      required: true
+
+  - type: input
+    id: owner
+    attributes:
+      label: Proposed owner
+    validations:
+      required: true
+
+  - type: textarea
+    id: initial_scope
+    attributes:
+      label: Initial scope
+      description: Define the first useful version.
+    validations:
+      required: true

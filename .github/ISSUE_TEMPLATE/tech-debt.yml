@@ -1,0 +1,53 @@
+name: Tech Debt
+description: Track refactoring, maintainability, or technical debt work
+title: "[Tech Debt]: "
+labels: ["type:tech-debt"]
+body:
+  - type: textarea
+    id: debt_description
+    attributes:
+      label: Debt description
+    validations:
+      required: true
+
+  - type: textarea
+    id: current_risk
+    attributes:
+      label: Current risk
+      description: What risk does this create now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: long_term_impact
+    attributes:
+      label: Long-term impact
+      description: What happens if this is not addressed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommended_action
+    attributes:
+      label: Recommended action
+    validations:
+      required: true
+
+  - type: input
+    id: affected_system
+    attributes:
+      label: Affected system or repository
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - Immediate
+        - This month
+        - This quarter
+        - Backlog
+    validations:
+      required: true
