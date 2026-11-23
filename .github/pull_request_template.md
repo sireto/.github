@@ -1,29 +1,12 @@
-## Summary
-Describe the change.
+## What and why
+<!-- Two or three sentences: what changes, and why. -->
 
-## Linked issue
-Closes #<issue-number>
+## How it was tested
+<!-- Automated tests, manual steps, or "not tested" and why. -->
 
-## Scope
-- What is included
-- What is intentionally excluded
+## Issue
+Fixes #
+<!-- Use "Refs #123" instead if this PR doesn't close the issue. -->
 
-## Testing
-- [ ] Unit tests
-- [ ] Integration tests
-- [ ] Manual verification
-
-## Deployment impact
-- [ ] No deployment impact
-- [ ] Requires deployment coordination
-- [ ] Requires migration or rollback plan
-
-## Reuse impact
-- [ ] No reusable extraction opportunity identified
-- [ ] Follow-up reusable asset issue created
-
-## Checklist
-- [ ] Issue linked
-- [ ] Documentation updated
-- [ ] Acceptance criteria satisfied
-- [ ] Reviewers assigned
+## Risk
+<!-- Migrations, config or infrastructure changes, secrets, anything a deploy needs to know. Write "None" if none. -->

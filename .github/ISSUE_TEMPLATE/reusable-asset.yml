@@ -7,7 +7,7 @@ body:
     id: originating_project
     attributes:
       label: Originating project
-      placeholder: e.g. CloudFirewall MVP
+      placeholder: e.g. the project or repository it came from
     validations:
       required: true
 

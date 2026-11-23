@@ -1,7 +1,2 @@
-* @sireto/engineering
-
-/docs/ @sireto/engineering
-/.github/ @sireto/platform
-/infrastructure/ @sireto/devops
-/security/ @sireto/security
-/platform/ @sireto/platform
+# This repository holds organisation-wide defaults; changes need an Org Admin.
+* @sireto/org-admins

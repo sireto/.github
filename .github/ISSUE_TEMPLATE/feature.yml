@@ -42,7 +42,7 @@ body:
     id: component
     attributes:
       label: Repo or component
-      placeholder: e.g. cloudfirewall-api, shared-auth, sireto-storage
+      placeholder: e.g. repository name, or a module path such as services/api
     validations:
       required: true
 

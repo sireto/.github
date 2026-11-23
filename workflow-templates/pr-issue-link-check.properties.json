@@ -1,0 +1,6 @@
+{
+  "name": "PR issue link check",
+  "description": "Fails a pull request whose description doesn't link an issue (Fixes, Closes, Resolves or Refs).",
+  "iconName": "octicon-link",
+  "categories": ["Automation"]
+}
